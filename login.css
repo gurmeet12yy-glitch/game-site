@@ -1,0 +1,195 @@
+*{
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body{
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(180deg,#0b1d3a,#0f2c5c);
+}
+
+.card{
+  width: 90%;
+  max-width: 360px;
+  background: rgba(255,255,255,0.1);
+  padding: 25px;
+  border-radius: 18px;
+  color: #fff;
+}
+
+.card h1{
+  text-align: center;
+  line-height: 1.2;
+  margin-bottom: 6px;
+}
+
+.card p{
+  text-align: center;
+  opacity: 0.85;
+  margin-bottom: 20px;
+}
+
+/* ===== INPUT BOX WRAP ===== */
+.input-box{
+  position: relative;
+  margin-bottom: 16px;
+}
+
+/* ===== INPUT ===== */
+.input-box input{
+  width: 100%;
+  height: 52px;
+  padding: 0 45px;
+  border-radius: 14px;
+  border: 2px solid transparent;
+  outline: none;
+  font-size: 15px;
+  background: #fff;
+  transition: all 0.3s ease;
+}
+
+/* ===== LOGIN ERROR BORDER ===== */
+.input-box input.error{
+  border-color: red;
+  box-shadow: 0 0 0 3px rgba(255, 0, 0, 0.25);
+}
+
+/* ===== ICON ===== */
+.input-box .icon{
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.6;
+  transition: 0.3s;
+}
+
+/* ===== ICON GLOW ON INPUT FOCUS ===== */
+.input-box:focus-within .icon{
+  opacity: 1;
+  filter: drop-shadow(0 0 6px #2ecc71);
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* password eye glow */
+.input-box:focus-within .eye{
+  opacity: 1;
+  filter: drop-shadow(0 0 6px #2ecc71);
+}
+
+
+/* ===== EYE ===== */
+.input-box .eye{
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+/* ===== FOCUS EFFECT (GREEN GLOW) ===== */
+.input-box input:focus{
+  border-color: #2ecc71;
+  box-shadow: 0 0 0 4px rgba(46,204,113,0.25);
+}
+
+/* ===== ICON GLOW ON FOCUS ===== */
+.input-box input:focus ~ .icon,
+.input-box input:focus ~ .eye{
+  opacity: 1;
+  filter: drop-shadow(0 0 6px #2ecc71);
+}
+
+
+/* ERROR TEXT */
+.error-text{
+  font-size: 13px;
+  color: red;
+  margin-bottom: 10px;
+}
+
+/* BUTTON */
+.btn{
+  width: 100%;
+  height: 50px;
+  border: none;
+  border-radius: 14px;
+  background: #2ecc71;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.link{
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.link a{
+  color: #2ecc71;
+  text-decoration: none;
+}
+
+
+.signup-link{
+  color: #2ecc71;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.signup-link:hover{
+  text-decoration: underline;
+}
+
+
+/* ===== SNOW BACKGROUND ===== */
+
+
+.card{
+  position: relative;
+  z-index: 2;
+}
+
+
+
+.snow{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background-image:
+    radial-gradient(2px 2px at 20px 30px, #fff, transparent),
+    radial-gradient(2px 2px at 40px 70px, #fff, transparent),
+    radial-gradient(3px 3px at 50px 160px, #fff, transparent),
+    radial-gradient(2px 2px at 90px 40px, #fff, transparent),
+    radial-gradient(3px 3px at 130px 80px, #fff, transparent);
+  background-size: 200px 200px;
+  animation: snow 8s linear infinite;
+  z-index: 0;
+}
+
+@keyframes snow{
+  0%{
+    background-position: 0 0;
+  }
+  100%{
+    background-position: 0 200px;
+  }
+}
+
+.music-btn{
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  font-size: 22px;
+  cursor: pointer;
+  z-index: 9999;
+  opacity: 0.7;
+}

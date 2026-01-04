@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Signup</title>
+<link rel="stylesheet" href="signup.css">
+</head>
+<body>
+
+<div class="card">
+  <h1>Welcome ✨✨</h1>
+  <p>Create your account</p>
+
+<form onsubmit="return validate()">
+ <div class="input-box">
+  <span class="icon">👤</span>
+  <input type="text" id="username" placeholder="Username">
+<div class="error-text" id="e-username"></div></div>
+
+
+  <div class="input-box">
+  <span class="icon">✉️</span>
+  <input type="email" id="email" placeholder="Email">
+<div class="error-text" id="e-email"></div>
+</div>
+
+  <div class="input-box">
+  <span class="icon">🔒</span>
+  <input
+    type="password"
+    id="password"
+    placeholder="Password"
+    oninput="checkStrength()"
+  >
+  <div class="error-text" id="e-password"></div>
+</div>
+
+
+ <div class="input-box">
+  <span class="icon">🔒</span>
+  <input
+    type="password"
+    id="confirm"
+    placeholder="Confirm Password"
+  >
+  <span class="eye" onclick="toggleEye()">👁</span>
+  <div class="error-text" id="e-confirm"></div>
+</div>
+
+
+  <div class="strength-wrap" id="strengthWrap">
+  <div class="strength-text" id="strengthText"></div>
+  <div class="bar">
+    <div class="fill" id="fill"></div>
+  </div>
+</div>
+
+  <button type="submit" class="signup-btn">Sign Up</button></form>
+  
+  <p class="switch-text">
+  Already have an account?
+  <a href="/game/login/login.html" class="switch-link">Login</a>
+</p>
+</div>
+
+<audio id="bgMusic" loop>
+  <source src="bg-music.mp3" type="audio/mpeg">
+</audio>
+
+<div class="music-btn muted" onclick="toggleMusic()">🔊</div>
+
+<div class="bg-glow"></div>
+
+<div class="snow">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
+<script src="validation.js"></script>
+
+</body>
+</html>
